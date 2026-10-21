@@ -1,0 +1,59 @@
+{
+  "name": "genpark-personal-agent-microbiome-gut-barrier-zonulin-permeability-skill",
+  "version": "1.0.0",
+  "title": "Microbiome Gut Barrier Integrity & Zonulin Permeability Skill",
+  "description": "Stool metagenomic dysbiosis index, zonulin intestinal permeability biomarker assessment, and prebiotic short-chain fatty acid (SCFA) synthesizer. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "microbiome",
+    "zonulin",
+    "gut-barrier",
+    "leaky-gut",
+    "scfa-butyrate",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "audit_gut_permeability_markers",
+      "description": "Score intestinal epithelial tight junction permeability from serum zonulin ng/ml and stool secretory IgA.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "serum_zonulin_ng_ml": {
+            "type": "number"
+          },
+          "fecal_calprotectin_ug_g": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "serum_zonulin_ng_ml"
+        ]
+      }
+    },
+    {
+      "name": "synthesize_mucosal_barrier_repair_protocol",
+      "description": "Synthesize a 30-day intestinal mucosal barrier restoration protocol (L-Glutamine, Zinc Carnosine, Sodium Butyrate).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "permeability_tier": {
+            "type": "string",
+            "enum": [
+              "SEVERE_PERMEABILITY",
+              "MODERATE_INFLAMMATION",
+              "OPTIMAL_BARRIER"
+            ]
+          }
+        },
+        "required": [
+          "permeability_tier"
+        ]
+      }
+    }
+  ]
+}
